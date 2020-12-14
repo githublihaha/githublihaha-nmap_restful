@@ -2,6 +2,12 @@
 ## 功能
 nmap调用的 restful api 接口
 ## 运行
+
+### Docker Compose
+进入到`nmap_uwsgi_nginx_mysql_docker_compose`目录，直接`docker-compose up`，然后访问http://127.0.0.1/apidocs/#/即可看到文档
+
+
+
 ### Docker
 进入到`nmap_restful`目录
 
