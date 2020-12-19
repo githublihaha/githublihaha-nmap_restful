@@ -18,10 +18,6 @@ resource_fields = {
     'result': fields.String
 }
 
-
-print('====import  ====scripts.py====')
-
-
 class Scripts(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
