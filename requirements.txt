@@ -3,6 +3,7 @@ aniso8601==8.0.0
 astroid==2.4.2
 attrs==20.3.0
 autopep8==1.5.4
+celery
 certifi==2020.12.5
 cffi==1.14.4
 chardet==3.0.4

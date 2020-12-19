@@ -1,5 +1,5 @@
-import threading
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor
 
 from flask import current_app
 from flask_restful import Resource
@@ -39,6 +39,8 @@ resource_fields_scanning = {
     'arguments': fields.String,
     'create_time': fields.DateTime
 }
+
+executor = ThreadPoolExecutor()
 
 class Scans(Resource):
     def __init__(self):
@@ -85,8 +87,7 @@ class Scans(Resource):
 
             # start a new threading to scan
             app_threading = current_app._get_current_object()
-            t = threading.Thread(target=nmapScan_threading, args=(app_threading, host, port, arguments, scan_id))
-            t.start()
+            executor.submit(nmapScan_threading,app_threading, host, port, arguments, scan_id)
 
             return {'scan_id': scan_id}, 200
         else:

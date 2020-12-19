@@ -19,6 +19,9 @@ resource_fields = {
 }
 
 
+print('====import  ====scripts.py====')
+
+
 class Scripts(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
