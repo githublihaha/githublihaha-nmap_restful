@@ -5,7 +5,7 @@ tags:
 produces:
   - application/json
 parameters:
-  - name: scan_id
+  - name: id
     in: path
     description: scan id
     required: true
